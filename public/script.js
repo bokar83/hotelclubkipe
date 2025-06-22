@@ -142,5 +142,36 @@ window.addEventListener('hashchange', offsetAnchor);
 
 // Set default language
 document.addEventListener('DOMContentLoaded', function() {
-  setLanguage('en');
+  // List of French-speaking country codes (ISO 3166-1 alpha-2)
+  const frenchCountries = [
+    'FR','BE','CH','LU','MC','CA','CI','BF','BJ','CM','CF','TD','KM','CG','CD','DJ','GQ','GA','GN','GW','HT','MG','ML','MA','MU','NE','NC','RE','RW','SN','SC','TG','TN','VU','WF','YT'
+  ];
+  // Try geolocation API
+  fetch('https://ipapi.co/json/')
+    .then(res => res.json())
+    .then(data => {
+      const country = data.country;
+      if (country === 'GN' || frenchCountries.includes(country)) {
+        setLanguage('fr');
+        document.getElementById('fr-btn').classList.add('active');
+        document.getElementById('en-btn').classList.remove('active');
+      } else {
+        setLanguage('en');
+        document.getElementById('en-btn').classList.add('active');
+        document.getElementById('fr-btn').classList.remove('active');
+      }
+    })
+    .catch(() => {
+      // Fallback: use browser language
+      const lang = navigator.language || navigator.userLanguage;
+      if (lang && lang.startsWith('fr')) {
+        setLanguage('fr');
+        document.getElementById('fr-btn').classList.add('active');
+        document.getElementById('en-btn').classList.remove('active');
+      } else {
+        setLanguage('en');
+        document.getElementById('en-btn').classList.add('active');
+        document.getElementById('fr-btn').classList.remove('active');
+      }
+    });
 }); 
