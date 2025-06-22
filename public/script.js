@@ -174,4 +174,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('fr-btn').classList.remove('active');
       }
     });
-}); 
+});
+
+// Hamburger menu toggle for mobile
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navLinks = document.getElementById('nav-links');
+if (hamburgerBtn && navLinks) {
+  hamburgerBtn.addEventListener('click', function() {
+    const isOpen = navLinks.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // Close menu when a nav link is clicked (mobile UX)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+} 
