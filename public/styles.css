@@ -63,7 +63,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(34, 34, 34, 0.55), rgba(34, 34, 34, 0.45)), url('public/AfricanFood_Unsplash.jpg');
+  background-image: linear-gradient(rgba(34, 34, 34, 0.55), rgba(34, 34, 34, 0.45)), url('images/AfricanFood_Unsplash.jpg');
   background-size: cover;
   background-position: center;
   margin-top: 80px;
