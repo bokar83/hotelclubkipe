@@ -181,33 +181,44 @@ const hamburgerBtn = document.getElementById('hamburger-btn');
 const navLinks = document.getElementById('nav-links');
 const navOverlay = document.getElementById('nav-overlay');
 if (hamburgerBtn && navLinks && navOverlay) {
-  hamburgerBtn.addEventListener('click', function() {
-    const isOpen = navLinks.classList.toggle('open');
-    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    navOverlay.style.display = isOpen ? 'block' : 'none';
-  });
-  // Close menu when a nav link is clicked (mobile UX)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
-      navOverlay.style.display = 'none';
-    });
-  });
-  // Close menu when overlay is clicked
-  navOverlay.addEventListener('click', () => {
+  function closeMenu() {
     navLinks.classList.remove('open');
+    navOverlay.classList.remove('open');
+    hamburgerBtn.classList.remove('open');
     hamburgerBtn.setAttribute('aria-expanded', 'false');
-    navOverlay.style.display = 'none';
+  }
+  function openMenu() {
+    navLinks.classList.add('open');
+    navOverlay.classList.add('open');
+    hamburgerBtn.classList.add('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+  }
+  hamburgerBtn.addEventListener('click', function() {
+    if (navLinks.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  navOverlay.addEventListener('click', closeMenu);
 }
 // WhatsApp open logic for Book a Room and Book via WhatsApp
+function openWhatsApp(lang) {
+  if (!whatsappNumber) {
+    alert('WhatsApp number not set yet.');
+    return;
+  }
+  window.open(getWhatsAppLink(lang), '_blank');
+}
 const bookRoomBtn = document.getElementById('book-room-btn');
 if (bookRoomBtn) {
   bookRoomBtn.addEventListener('click', function(e) {
     e.preventDefault();
     const lang = document.getElementById('en-btn').classList.contains('active') ? 'en' : 'fr';
-    window.open(getWhatsAppLink(lang), '_blank');
+    openWhatsApp(lang);
   });
 }
 const bookingBtn = document.getElementById('booking-btn');
@@ -215,6 +226,6 @@ if (bookingBtn) {
   bookingBtn.addEventListener('click', function(e) {
     e.preventDefault();
     const lang = document.getElementById('en-btn').classList.contains('active') ? 'en' : 'fr';
-    window.open(getWhatsAppLink(lang), '_blank');
+    openWhatsApp(lang);
   });
 } 

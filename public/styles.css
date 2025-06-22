@@ -300,6 +300,19 @@ footer {
   border-radius: 2px;
   transition: all 0.3s;
 }
+.hamburger.open {
+  background: #d87b1d;
+  box-shadow: 0 4px 16px rgba(250,148,65,0.28);
+}
+.hamburger.open span {
+  background: #fff;
+}
+.nav-overlay {
+  display: none;
+}
+.nav-overlay.open {
+  display: block;
+}
 @media (max-width: 1000px) {
   .container {
     max-width: 98vw;
