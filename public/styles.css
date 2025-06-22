@@ -315,22 +315,13 @@ footer {
 }
 @media (max-width: 800px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     padding: 0.7rem 0.7rem;
+    justify-content: flex-end;
   }
-  .nav-links {
-    gap: 1.2rem;
-  }
-  .hero-content h1 {
-    font-size: 2.1rem;
-  }
-  .section {
-    padding: 2.2rem 0 1.5rem 0;
-  }
-  .lang-toggle {
-    margin-left: 0;
-    margin-top: 0.7rem;
+  .nav-logo {
+    margin-left: 1.2rem;
   }
   .hamburger {
     display: flex;
@@ -338,51 +329,88 @@ footer {
     top: 18px;
     right: 18px;
     box-shadow: 0 4px 16px rgba(250,148,65,0.18);
-    z-index: 2001;
+    z-index: 2002;
   }
   .nav-links {
     position: fixed;
     top: 70px;
-    right: 18px;
+    right: 0;
+    left: 0;
     background: #fff;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    border-radius: 18px;
+    border-radius: 0 0 18px 18px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 0.5rem;
-    width: 200px;
+    width: 100vw;
+    min-width: unset;
+    max-width: unset;
     padding: 1.2rem 1.2rem 1.2rem 1.2rem;
     display: none;
-    z-index: 2000;
+    z-index: 2001;
+    margin-right: 0;
+    animation: slideInNav 0.25s cubic-bezier(.77,0,.18,1);
   }
   .nav-links.open {
     display: flex;
   }
+  .nav-overlay {
+    display: none;
+  }
+  .nav-links.open ~ .nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(34,34,34,0.35);
+    z-index: 2000;
+  }
 }
 @media (max-width: 600px) {
   .hero {
-    height: 35vh;
-    min-height: 200px;
+    height: 40vh;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .section-title {
-    font-size: 1.2rem;
+  .hero-content {
+    padding: 0.5rem 0.2rem;
+    margin: 0 auto;
+    max-width: 98vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    font-size: 0.95rem;
   }
-  .container {
-    padding: 0 0.5rem;
+  .hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
   }
   .nav-links {
     top: 60px;
-    right: 10px;
-    width: 90vw;
-    min-width: 160px;
-    max-width: 98vw;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    min-width: unset;
+    max-width: unset;
     padding: 1rem 0.7rem;
+    align-items: flex-end;
+    margin-right: 0;
   }
   .hamburger {
     top: 10px;
     right: 10px;
   }
-  .navbar {
-    align-items: flex-start;
-  }
+}
+@keyframes slideInNav {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 } 
