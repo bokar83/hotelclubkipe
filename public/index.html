@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Club de Kipe</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="public/Logo Hotel Kipé.png" alt="Hotel Club de Kipe Logo" height="40">
+        <span>Hotel Club de Kipe</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button id="en-btn" class="active">EN</button>
+        <span>|</span>
+        <button id="fr-btn">FR</button>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Hotel Club de Kipe</h1>
+        <p>Your tranquil retreat in Conakry, Guinea</p>
+        <a href="#booking" class="cta-btn">Book a Room</a>
+      </div>
+      <div class="hero-bg"></div>
+    </section>
+  </header>
+  <main>
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <p>Discover comfort, hospitality, and authentic Guinean charm at Hotel Club de Kipe. Our boutique hotel offers a peaceful oasis with modern amenities, lush gardens, and a welcoming atmosphere for business and leisure travelers alike.</p>
+      </div>
+    </section>
+    <section id="amenities" class="section amenities-section">
+      <div class="container">
+        <h2 class="section-title">Amenities</h2>
+        <div class="amenities-grid">
+          <div class="amenity-card"><span class="icon">🛏️</span><h3>Rooms</h3><p>Comfortable, air-conditioned rooms with modern decor.</p></div>
+          <div class="amenity-card"><span class="icon">🍽️</span><h3>Restaurant</h3><p>Enjoy local and international cuisine in our on-site restaurant.</p></div>
+          <div class="amenity-card"><span class="icon">🍹</span><h3>Bar</h3><p>Relax with a drink at our exclusive bar and lounge.</p></div>
+          <div class="amenity-card"><span class="icon">🏊‍♂️</span><h3>Pool</h3><p>Swim and unwind in our beautiful outdoor pool.</p></div>
+          <div class="amenity-card"><span class="icon">📶</span><h3>Wi-Fi</h3><p>Free high-speed internet throughout the hotel.</p></div>
+          <div class="amenity-card"><span class="icon">🅿️</span><h3>Parking</h3><p>Secure, complimentary parking for all guests.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="carousel">
+          <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_01.jpg" alt="Hotel room 1" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_02.jpg" alt="Hotel room 2" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_03.jpg" alt="Hotel room 3" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_04.jpg" alt="Hotel room 4" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_05.jpg" alt="Hotel room 5" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_06.jpg" alt="Hotel room 6" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_07.jpg" alt="Hotel room 7" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_08.jpg" alt="Hotel room 8" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_09.jpg" alt="Hotel room 9" loading="lazy"></div>
+            <div class="carousel-slide"><img src="public/Photos du Hotel et Club/HCKroom_10.jpg" alt="Hotel room 10" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+        </div>
+      </div>
+    </section>
+    <section id="map" class="section map-section">
+      <div class="container">
+        <h2 class="section-title">Find Us</h2>
+        <iframe src="https://www.google.com/maps?q=Hotel+Club+de+Kipe,Conakry,Guinea&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    <section id="booking" class="section booking-section">
+      <div class="container">
+        <h2 class="section-title">Book Your Stay</h2>
+        <a href="#" class="cta-btn">Book via WhatsApp</a>
+      </div>
+    </section>
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Your message" required></textarea>
+          <button type="submit" class="cta-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Hotel Club de Kipe. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
